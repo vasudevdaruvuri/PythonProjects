@@ -7,6 +7,12 @@ import re
 base_url = 'http://www.yellowpages.com/search?search_terms=coffee&geo_location_terms=Los%20Angeles%2C%20CA'
 
 def get_url_build(base_url,limit):
+    '''
+
+    :param base_url:
+    :param limit:
+    :return:
+    '''
     
    #initialisation() 
    for i in range(1,limit + 1): 
