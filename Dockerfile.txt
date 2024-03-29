@@ -1,0 +1,18 @@
+# Use the official Python image as a parent image
+FROM python:3.9-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install Flask, Gradio, and other dependencies
+RUN pip install --no-cache-dir flask gradio
+
+# Expose port 5000 for Flask app and port 7860 for Gradio app
+EXPOSE 5000
+EXPOSE 7860
+
+# Run both Flask and Gradio apps when the container launches
+CMD ["python", "flask_app.py"] && ["python", "gradio_app.py"]
